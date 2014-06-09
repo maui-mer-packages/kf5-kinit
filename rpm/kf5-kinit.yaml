@@ -52,7 +52,6 @@ PkgBR:
     - kf5-solid-devel
     - kf5-kdoctools-devel
     - kf5-karchive-devel
-    - libX11-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -62,6 +61,7 @@ PkgConfigBR:
     - Qt5Widgets
     - Qt5Concurrent
     - Qt5Test
+    - x11-xcb
 Requires:
     - kf5-filesystem
 
