@@ -9,7 +9,7 @@ Name:       kf5-kinit
 # << macros
 
 Summary:    KDE Frameworks 5 tier 3 solution for process launching
-Version:    4.99.0
+Version:    4.100.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
