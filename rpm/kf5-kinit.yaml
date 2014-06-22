@@ -52,6 +52,7 @@ PkgBR:
     - kf5-solid-devel
     - kf5-kdoctools-devel
     - kf5-karchive-devel
+    - libcap-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus

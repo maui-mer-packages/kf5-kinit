@@ -59,6 +59,7 @@ BuildRequires:  kf5-kjobwidgets-devel
 BuildRequires:  kf5-solid-devel
 BuildRequires:  kf5-kdoctools-devel
 BuildRequires:  kf5-karchive-devel
+BuildRequires:  libcap-devel
 
 %description
 KDE Frameworks 5 tier 3 solution for process launching
