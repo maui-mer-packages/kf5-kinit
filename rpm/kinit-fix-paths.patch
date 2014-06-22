@@ -1,0 +1,56 @@
+From 1b716c350e197696ea943e58e87acdd88733c701 Mon Sep 17 00:00:00 2001
+From: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Date: Mon, 23 Jun 2014 01:43:48 +0000
+Subject: [PATCH 2/2] Fix start_kdeinit and kdeinit5 paths
+
+Don't prepend prefix as it's already in the path.
+---
+ src/start_kdeinit/start_kdeinit.c         | 2 +-
+ src/start_kdeinit/start_kdeinit_wrapper.c | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/start_kdeinit/start_kdeinit.c b/src/start_kdeinit/start_kdeinit.c
+index 07a28d3..92dc408 100644
+--- a/src/start_kdeinit/start_kdeinit.c
++++ b/src/start_kdeinit/start_kdeinit.c
+@@ -31,7 +31,7 @@
+ #include <sys/capability.h>
+ #endif
+ 
+-#define EXECUTE CMAKE_INSTALL_PREFIX"/"BIN_INSTALL_DIR "/kdeinit5"
++#define EXECUTE BIN_INSTALL_DIR "/kdeinit5"
+ 
+ #if KDEINIT_OOM_PROTECT
+ 
+diff --git a/src/start_kdeinit/start_kdeinit_wrapper.c b/src/start_kdeinit/start_kdeinit_wrapper.c
+index f35c4a9..f7ef44a 100644
+--- a/src/start_kdeinit/start_kdeinit_wrapper.c
++++ b/src/start_kdeinit/start_kdeinit_wrapper.c
+@@ -23,7 +23,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ 
+-#define EXECUTE CMAKE_INSTALL_PREFIX"/"KF5_LIBEXEC_INSTALL_DIR "/start_kdeinit"
++#define EXECUTE KF5_LIBEXEC_INSTALL_DIR "/start_kdeinit"
+ 
+ #if KDEINIT_OOM_PROTECT
+ 
+@@ -44,6 +44,7 @@ int main(int argc, char **argv)
+         perror("pipe()");
+         return 1;
+     }
++    fprintf(stderr, "EXECUTE: %s\n", EXECUTE);
+     switch (fork()) {
+     case -1:
+         perror("fork()");
+@@ -88,6 +89,7 @@ int main(int argc, char **argv)
+         return 1;
+     }
+     argv[0] = (char *)EXECUTE;
++    fprintf(stderr, "EXECUTE: %s\n", EXECUTE);
+     execvp(EXECUTE, argv);
+     perror("start_kdeinit");
+     return 1;
+-- 
+1.8.3-rc3
+

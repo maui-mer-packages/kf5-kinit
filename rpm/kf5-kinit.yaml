@@ -11,6 +11,9 @@ SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
+Patches:
+    - kinit-respect-env-paths.patch
+    - kinit-fix-paths.patch
 
 RpmLintIgnore:
     - devel-file-in-non-devel-package

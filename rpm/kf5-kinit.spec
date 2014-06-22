@@ -17,6 +17,8 @@ URL:        http://www.kde.org
 Source0:    %{name}-%{version}.tar.xz
 Source100:  kf5-kinit.yaml
 Source101:  kf5-kinit-rpmlintrc
+Patch0:     kinit-respect-env-paths.patch
+Patch1:     kinit-fix-paths.patch
 Requires:   kf5-filesystem
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -85,6 +87,10 @@ that use %{name}.
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
+# kinit-respect-env-paths.patch
+%patch0 -p1
+# kinit-fix-paths.patch
+%patch1 -p1
 # >> setup
 # << setup
 
