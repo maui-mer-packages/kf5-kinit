@@ -8,8 +8,14 @@ Name:       kinit
 # >> macros
 # << macros
 
+# >> bcond_with
+# << bcond_with
+
+# >> bcond_without
+# << bcond_without
+
 Summary:    KDE Frameworks 5 tier 3 solution for process launching
-Version:    5.1.0
+Version:    5.2.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
