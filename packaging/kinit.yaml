@@ -7,7 +7,6 @@ Summary      : KDE Frameworks 5 tier 3 solution for process launching
 Description  : |
   KDE Frameworks 5 tier 3 solution for process launching
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
