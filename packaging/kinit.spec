@@ -9,7 +9,7 @@ Name:       kinit
 # << macros
 
 Summary:    KDE Frameworks 5 tier 3 solution for process launching
-Version:    5.2.0
+Version:    5.3.0
 Release:    1
 Group:      System/Base
 License:    GPLv2+
