@@ -10,7 +10,7 @@ Name:       kinit
 
 Summary:    KDE Frameworks 5 tier 3 solution for process launching
 Version:    5.3.0
-Release:    1
+Release:    2
 Group:      System/Base
 License:    GPLv2+
 URL:        http://www.kde.org
