@@ -107,7 +107,9 @@ rm -rf %{buildroot}
 # >> install post
 # << install post
 
-%files
+%find_lang kinit5_qt --with-qt --all-name || :
+
+%files -f kinit5_qt.lang
 %defattr(-,root,root,-)
 %doc COPYING.LIB README.md
 %{_kf5_bindir}/*
